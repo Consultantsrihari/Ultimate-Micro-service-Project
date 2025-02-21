@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+
+  users:
+    build:
+      context: .
+      dockerfile: Dockerfile.users
+    ports:
+      - "3001:3001"
+
+  products:
+    build:
+      context: .
+      dockerfile: Dockerfile.products
+    ports:
+      - "3002:3002"
+
+  inventory:
+    build:
+      context: .
+      dockerfile: Dockerfile.inventory
+    ports:
+      - "3003:3003"
+
+  orders:
+    build:
+      context: .
+      dockerfile: Dockerfile.orders
+    ports:
+      - "3004:3004"
+
+  notifications:
+    build:
+      context: .
+      dockerfile: Dockerfile.notifications
+    ports:
+      - "3005:3005"
